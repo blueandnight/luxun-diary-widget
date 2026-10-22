@@ -1,0 +1,42 @@
+{
+  "name": "luxun-diary-widget",
+  "version": "1.0.0",
+  "description": "鲁迅日记·百年前的今天 — Windows 桌面浮窗",
+  "main": "main.js",
+  "author": "Lu Xun Diary contributors",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "45.0.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.blueandnight.luxundiary",
+    "productName": "LuXunDiaryWidget",
+    "artifactName": "LuXunDiaryWidget-${version}-portable.${ext}",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "assets/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    }
+  }
+}
